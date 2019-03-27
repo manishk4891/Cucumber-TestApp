@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Add Person Details";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Add Person Details</h2>
+    </div>
+</div>
+
+@if (!string.IsNullOrEmpty(ViewBag.Message))
+{
+    <div class="row">
+        <div class="col-md-4">
+            <span style="color:red">@ViewBag.Message</span>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <form action="/Home/Index" method="post">
+            @Html.AntiForgeryToken()
+            <div class="row">
+                <div class="col-md-4">
+                    Name
+                    <input type="text" name="name" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    Number
+                    <input type="text" name="number" />
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <button type="submit">
+                        Submit
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
